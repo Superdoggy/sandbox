@@ -13,12 +13,18 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     
     <script>
+    var mouseX = 0;
+    var mouseY = 0;
     $(document).ready(function(){    
       var meeple = new Image(150, 150);
       meeple.src = "https://cloud.githubusercontent.com/assets/13082525/8506398/d6802b7c-21df-11e5-929f-1c47137e68f2.png";
       var canvas = document.getElementById("meeples");
       var canvasContext = canvas.getContext("2d");
-      canvasContext.drawImage(meeple, 0, 0);
+      canvasContext.drawImage(meeple, mouseX - 12, mouseY - 12, 25, 25);
+    });
+    $(document).mousemove(function(event){
+      mouseX = event.pageX;
+      mouseY = event.pageY;
     });
     </script>
   </html>
