@@ -5,7 +5,7 @@
       
     </head>
     <body>
-      <canvas id="meeples" width="1366" height="768">
+      <canvas id="meeples" width="1366" height="768" padding="none" margin="none">
         
       </canvas>
       
@@ -28,7 +28,7 @@
     });
     setInterval(function(){
       canvasContext.clearRect(0, 0, 1366, 768);
-      canvasContext.drawImage(meeple, mouseX - 75, mouseY - 75, 25, 25);
+      canvasContext.drawImage(meeple, mouseX - 12, mouseY - 12, 25, 25);
     }, 20);
     </script>
   </html>
