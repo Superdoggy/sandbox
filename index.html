@@ -15,17 +15,21 @@
     <script>
     var mouseX = 0;
     var mouseY = 0;
+    var canvas = document.getElementById("meeples");
+    var canvasContext = canvas.getContext("2d");
     $(document).ready(function(){    
       var meeple = new Image(150, 150);
       meeple.src = "https://cloud.githubusercontent.com/assets/13082525/8506398/d6802b7c-21df-11e5-929f-1c47137e68f2.png";
-      var canvas = document.getElementById("meeples");
-      var canvasContext = canvas.getContext("2d");
       canvasContext.drawImage(meeple, mouseX - 12, mouseY - 12, 25, 25);
     });
     $(document).mousemove(function(event){
       mouseX = event.pageX;
       mouseY = event.pageY;
     });
+    setInterval(function(){
+      canvasContext.clearRect(0, 0, 1366, 768);
+      canvasContext.drawImage(meeple, mouseX - 12, mouseY - 12, 25, 25);
+    }, 20);
     </script>
   </html>
 </DOCTYPE>
